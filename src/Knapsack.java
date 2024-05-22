@@ -16,10 +16,14 @@ public class Knapsack {
 
     public static void main(String[] args) {
 
+        System.out.println("============================================");
+        System.out.println("Knapsack problem solver: Brute force edition");
+        System.out.println("============================================");
+        System.out.println();
         System.out.println("Enter the file path: ");
         Scanner scanner = new Scanner(System.in);
         String filePath = scanner.next();
-        FileHandler.validateFile(filePath);
+        filePath = FileHandler.validateFile(filePath).getAbsolutePath();
 
         try {
             readFile(filePath);
@@ -77,7 +81,7 @@ public class Knapsack {
         System.out.println();
         System.out.println("Currently best combination: " + Arrays.toString(bestCombination).replace("true", "1").replace("false", "0"));
         System.out.println("Currently best value: " + maxValue);
-        System.out.println("Iterations: " + iterations);
+        System.out.println("Current number of iterations: " + iterations);
     }
 
 }
